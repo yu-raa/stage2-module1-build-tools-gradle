@@ -7,7 +7,7 @@ public class Utils {
         for (String str : args)
             try {
                 double doub = Double.parseDouble(str);
-                if (doub < 0) {
+                if (doub <= 0) {
                     return false;
                 }
             }
