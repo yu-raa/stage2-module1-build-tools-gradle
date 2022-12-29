@@ -1,4 +1,34 @@
-//add everything here
+plugins {
+    id 'java'
+}
+
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+java {
+    sourceCompatibility = "8"
+    targetCompatibility = "1.8"
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId='com.company'
+            artifactId='util'
+            version='1.0.0'
+
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    'org.apache.commons:commons-lang3:3.12.0'
+}
 
 test {
     useJUnitPlatform()
